@@ -1,10 +1,8 @@
 ---
-templateKey: blog-post
 title: このサイトを作りました
-date: 2019-11-11T21:00:00-0000
+date: 2019-11-11T21:00:00-0900
 description: 普段の仕事できない、好きなことを詰めたポートフォリオサイトを作りました。
-featuredpost: true
-featuredimage: /post/og-image.jpg
+image: /post/og-image.webp
 tags:
   - design
   - lottie

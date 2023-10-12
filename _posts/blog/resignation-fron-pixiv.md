@@ -1,11 +1,10 @@
 ---
 title: ピクシブ株式会社を退職しました
-date: 2022-03-04T20:30:00+0000
-image: /post/free-gradient.jpg
-private: true
+date: 2022-03-04T20:30:00+0900
+image: /post/free-gradient.webp
+private: false
 tags:
   - WORKING
-  - AAAAAAAA
 ---
 
 お久しぶりです、まつらいです。  

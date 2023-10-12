@@ -53,7 +53,7 @@ function WebCard({
   const u = new URL(href)
   let faviconWithDomain: string | null
   if (!favicon) {
-    faviconWithDomain = null
+    faviconWithDomain = u.origin + '/favicon.ico'
   } else if (favicon.startsWith('http')) {
     faviconWithDomain = favicon
   } else {
@@ -68,7 +68,7 @@ function WebCard({
     }
     <div class="webcard-text">
       <div class="webcard-title" >${title}</div>
-      <div class="webcard-description">${description}</div>
+      <div class="webcard-description">${description || ''}</div>
       <div class="webcard-siteurl">
         <img class="webcard-favicon" src="${faviconWithDomain}" />
         ${u.origin}

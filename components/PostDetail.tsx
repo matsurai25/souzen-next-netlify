@@ -2,36 +2,68 @@ import { styled } from 'styled-components'
 import { IFPostDetail } from '@/util/types'
 import { Inner8 } from '@/components/Layout'
 import dayjs from 'dayjs'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 interface Props {
   post: IFPostDetail
 }
 export default function PostDetail({ post }: Props) {
+  const { asPath } = useRouter()
+
+  useEffect(() => {
+    ;(window as any).twttr.widgets.load()
+  }, [asPath])
+
   return (
     <Wrppaer>
       <Article
-        style={{ viewTransitionName: `${post.id}-wrapper` }}
+        style={{ viewTransitionName: `wrapper-${post.id}` }}
       >
         {post.image && (
           <CoverImage
             src={post.image}
-            style={{ viewTransitionName: post.id }}
+            style={{
+              viewTransitionName: `image-${post.id}`
+            }}
           />
         )}
         <Padding>
+          <HiddenTags>
+            {post.tags &&
+              post.tags.map((tag) => (
+                <Tag
+                  style={{
+                    viewTransitionName: `tag-${post.id}-${tag}`
+                  }}
+                  key={tag}
+                >
+                  {tag}
+                </Tag>
+              ))}
+          </HiddenTags>
+          {post.private && (
+            <PrivateCallout>
+              この記事はURLを知っている人のみが閲覧可能です
+            </PrivateCallout>
+          )}
           <Title>{post.title}</Title>
           <Published>
-            {dayjs(post.date).format('YYYY.MM.DD')}
+            {dayjs(post.date).format(
+              'YYYY年MM月DD日 HH:mm'
+            )}
           </Published>
           <Body
             dangerouslySetInnerHTML={{
               __html: post.contentHtml
             }}
           />
-          <script
-            async
-            src='https://platform.twitter.com/widgets.js'
-          ></script>
+          <Tags>
+            {post.tags &&
+              post.tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+          </Tags>
         </Padding>
       </Article>
     </Wrppaer>
@@ -47,7 +79,7 @@ const Article = styled.article`
   line-height: 1.8;
   border-radius: 2.4rem;
   background: #fff;
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2.4rem 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
   z-index: 2;
   position: relative;
@@ -57,16 +89,67 @@ const Padding = styled.div`
   padding: 6rem 12rem;
 `
 
+const Tags = styled.div`
+  display: flex;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 2.4rem;
+`
+const Tag = styled.div`
+  display: flex;
+  padding: 0.2rem 0.8rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 0.1rem solid #000;
+  color: #000;
+  font-family: K2D;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+`
+const HiddenTags = styled(Tags)`
+  opacity: 0;
+  height: 0;
+  margin: 0;
+`
+
+const PrivateCallout = styled.div`
+  padding: 1.6rem 2.4rem;
+  font-size: 1.4rem;
+  background-color: #ffbaba;
+  margin: 2.4rem 0;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+
+  &::before {
+    content: '!';
+    display: flex;
+    background-color: #f33;
+    border-radius: 1.6rem;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+  }
+`
+
 const Title = styled.h1`
-  line-height: 1.2;
-  font-size: 2.4rem;
+  line-height: 1.4;
+  font-size: 2.8rem;
   font-weight: bold;
 `
 
 const Published = styled.h6`
   line-height: 1;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #999;
+  margin-top: 1.2rem;
 `
 
 const CoverImage = styled.img`
@@ -75,25 +158,59 @@ const CoverImage = styled.img`
 `
 
 const Body = styled.div`
+  --default-margin: 2.4rem;
   h2 {
-    color: #00f;
-    font-size: 24px;
+    color: #000;
+    font-size: 2.4rem;
     font-weight: bold;
-    margin: 40px 0 24px;
+    margin: calc(var(--default-margin) + 1.6rem) 0
+      var(--default-margin);
+  }
+  h3 {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: var(--default-margin) 0 0.4rem;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+    gap: 1.6rem;
+
+    &::after {
+      content: '';
+      display: block;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+    }
+
+    & + p {
+      margin-top: 0.4rem;
+      font-size: 1.2rem;
+    }
   }
 
   h6 {
     color: #000;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: bold;
-    margin: 20px 0 12px;
+    margin: var(--default-margin) 0;
   }
 
   blockquote {
-    margin: 16px 0;
-    padding: 12px 0 12px 24px;
-    border-left: 2px solid #ddd;
+    margin: var(--default-margin) 0;
+    padding: 1.2rem 0 1.2rem 2.4rem;
+    border-left: 0.2rem solid #ddd;
     color: #999;
+  }
+
+  code {
+    display: block;
+    margin: var(--default-margin) 0;
+    padding: 1.6rem 3.2rem;
+    background-color: #f0f0f0;
+    font-size: 1.4rem;
+    font-family: K2D;
   }
 
   a {
@@ -106,7 +223,7 @@ const Body = styled.div`
   }
 
   p {
-    margin: 16px 0;
+    margin: var(--default-margin) 0;
   }
 
   .twitter-tweet {
@@ -116,7 +233,7 @@ const Body = styled.div`
 
   ul,
   ol {
-    padding: 12px 0 12px 40px;
+    padding: 1.2rem 0 1.2rem 4rem;
   }
 
   ul li {
@@ -133,9 +250,10 @@ const Body = styled.div`
     grid-template-columns: auto 1fr;
     color: #000;
     text-decoration: none;
-    border: 1px solid #ddd;
+    border: 0.1rem solid #ddd;
     border-radius: 0.8rem;
     overflow: hidden;
+    margin: var(--default-margin) 0;
 
     &:hover {
       text-decoration: none;
@@ -178,5 +296,12 @@ const Body = styled.div`
     flex-flow: row;
     align-items: center;
     gap: 0.8rem;
+  }
+
+  iframe[src*='youtube'] {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    margin: var(--default-margin) 0;
   }
 `

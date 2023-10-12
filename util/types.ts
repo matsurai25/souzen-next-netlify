@@ -3,6 +3,7 @@ export interface IFPostDetail {
   id: string
   title: string
   date: string
+  private?: boolean
   image?: string
   tags?: string[]
 }

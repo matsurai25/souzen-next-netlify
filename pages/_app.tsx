@@ -44,9 +44,26 @@ const GlobalStyles = createGlobalStyle`
     opacity: 1;
     font-family: 'Noto Sans JP', serif;
     font-size: max(min(calc(100vw / 1440 * 10), 10px), calc(100vw / 1920 * 10));
+    transition: opacity 1s ease-out;
 
     ${media.mobile} {
       font-size: calc(100vw / 375 * 10);
     }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+  }
+
+  @keyframes fade-out {
+    to { opacity: 0; }
+  }
+
+  ::view-transition-old(*) {
+    transition-duration: 5s;
+  }
+
+  ::view-transition-new(*) {
+    transition-duration: 5s;
   }
 `

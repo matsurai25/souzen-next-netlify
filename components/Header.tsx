@@ -8,6 +8,13 @@ export default function Header() {
       <TransitionLink href='/'>
         <Logo src='/logo.svg' alt='souzen' />
       </TransitionLink>
+      <Links
+        style={{ viewTransitionName: `headedr-links` }}
+      >
+        <TransitionLink href='/'>Top</TransitionLink>
+        <TransitionLink href='/works'>Works</TransitionLink>
+        <TransitionLink href='/blog'>Blog</TransitionLink>
+      </Links>
     </Wrapper>
   )
 }
@@ -17,6 +24,8 @@ const Wrapper = styled.header`
   height: 8rem;
   display: grid;
   align-items: center;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
 
   ${media.mobile} {
   }
@@ -24,4 +33,16 @@ const Wrapper = styled.header`
 
 const Logo = styled.img`
   height: 4rem;
+`
+
+const Links = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 1.6rem;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 `

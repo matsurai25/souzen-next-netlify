@@ -58,7 +58,11 @@ export async function getAllPosts(
     })
   }
 
-  console.log(result)
+  result.sort(
+    (a, b) =>
+      new Date(b.date).getTime() -
+      new Date(a.date).getTime()
+  )
 
   return result
 }

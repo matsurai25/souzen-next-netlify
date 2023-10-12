@@ -10,7 +10,6 @@ import { WORK_POST_DIRECTORY } from '@/config'
 import { getAllPosts } from '@/lib/post'
 
 export default function Home({ works }: Props) {
-  console.log(works)
   return (
     <>
       <Head>

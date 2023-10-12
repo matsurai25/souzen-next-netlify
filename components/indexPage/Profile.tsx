@@ -7,7 +7,7 @@ export default function Profile() {
     <Wrapper style={{ viewTransitionName: 'profile' }}>
       <Panel>
         <Head>代表取締役 / CEO</Head>
-        <Icon src='/icon.png' />
+        <Icon src='/icon.webp' />
         <Name>松元 蒼太 / matsurai</Name>
         <Role>
           エンジニア・デザイナー・プロダクトマネージャー・映像クリエイター
@@ -83,7 +83,7 @@ const Wrapper = styled(Inner8)``
 const Panel = styled.div`
   border-radius: 2.4rem;
   background: #fff;
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2.4rem 0 rgba(0, 0, 0, 0.15);
   padding: 4rem;
   display: grid;
   grid-template-columns: auto auto 1fr;
@@ -166,7 +166,7 @@ const Skills = styled.div`
   row-gap: 1.2rem;
 `
 const Border = styled.div`
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.1rem solid #ddd;
   width: 100%;
   margin: 1rem 0;
 `

@@ -1,10 +1,8 @@
 ---
-templateKey: blog-post
 title: 昔作ったものを紹介する集
-date: 2019-11-11T21:00:01+0000
+date: 2019-11-11T21:00:01+0900
 description: 昔作ったもの
-featuredpost: false
-featuredimage: /post/EBlgQGsU4AAPbrM.jpg
+image: /post/EBlgQGsU4AAPbrM.webp
 tags:
   - motion
   - design

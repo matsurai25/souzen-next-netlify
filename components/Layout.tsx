@@ -16,6 +16,10 @@ const Inner = styled.div`
   }
 `
 
+export const Inner11 = styled(Inner)`
+  width: calc(12rem * 11);
+`
+
 export const Inner10 = styled(Inner)`
   width: calc(12rem * 10);
 `
