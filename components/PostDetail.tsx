@@ -11,9 +11,9 @@ interface Props {
 export default function PostDetail({ post }: Props) {
   const { asPath } = useRouter()
 
-  useEffect(() => {
-    ;(window as any).twttr.widgets.load()
-  }, [asPath])
+  // useEffect(() => {
+  //   ;(window as any).twttr.widgets.load()
+  // }, [asPath])
 
   return (
     <Wrppaer>
@@ -50,7 +50,7 @@ export default function PostDetail({ post }: Props) {
           <Title>{post.title}</Title>
           <Published>
             {dayjs(post.date).format(
-              'YYYY年MM月DD日 HH:mm'
+              'YYYY年MM月DD日'
             )}
           </Published>
           <Body
