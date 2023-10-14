@@ -12,7 +12,7 @@ export default function Page({ posts }: Props) {
   return (
     <>
       <Head>
-        <title>works /souzen</title>
+        <title>blog / 株式会社souzen</title>
         <meta name='description' content='' />
         <meta
           name='viewport'

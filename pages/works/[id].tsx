@@ -33,7 +33,16 @@ export default function WorksDetail({
     <>
       <Head>
         <title>{`${post.title} / works / 株式会社souzen`}</title>
-        <meta name='description' content='test' />
+        <meta
+          property='og:title'
+          content={`${post.title} / works / 株式会社souzen`}
+        />
+        {/* <meta name='description' content={description} />
+        <meta
+          property='og:description'
+          content={description}
+        /> */}
+        <meta property='og:image' content={post.image} />
       </Head>
       <PostDetail post={post} />
       <Inner8>

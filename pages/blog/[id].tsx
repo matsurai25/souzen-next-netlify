@@ -18,7 +18,17 @@ export default function BlogDetail({ post }: Props) {
     <>
       <Head>
         <title>{`${post.title} / blog / 株式会社souzen`}</title>
-        <meta name='description' content='test' />
+        <title>{`${post.title} / blog / 株式会社souzen`}</title>
+        <meta
+          property='og:title'
+          content={`${post.title} / blog / 株式会社souzen`}
+        />
+        {/* <meta name='description' content={description} />
+        <meta
+          property='og:description'
+          content={description}
+        /> */}
+        <meta property='og:image' content={post.image} />
       </Head>
       <PostDetail post={post} />
     </>

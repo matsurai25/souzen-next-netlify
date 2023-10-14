@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html lang='ja'>
       <Head>
+        <meta
+          name='viewport'
+          content='width=device-width,initial-scale=1.0'
+        />
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
@@ -25,6 +29,22 @@ export default function Document() {
           src='https://platform.twitter.com/widgets.js'
         ></script>
         <meta name='robots' content='noindex,follow' />
+        <meta
+          property='og:site_name'
+          content={'souzen Inc.'}
+        />
+        <meta
+          property='og:url'
+          content={'https://souzen.io'}
+        />
+        <meta property='og:type' content='website' />
+        <link rel='shortcut icon' href={'favicon.ico'} />
+        <meta name='theme-color' content='#0000FF' />
+        <meta name='twitter:card' content='summary' />
+        <meta
+          property='og:image'
+          content={'post/free-gradient.webp'}
+        />
       </Head>
       <body>
         <Main />

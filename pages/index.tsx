@@ -13,13 +13,13 @@ export default function Home({ works }: Props) {
   return (
     <>
       <Head>
-        <title>souzen</title>
+        <title>株式会社souzen</title>
         <meta name='description' content='test' />
         <meta
           name='viewport'
           content='width=device-width, initial-scale=1'
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='favicon.ico' />
       </Head>
       <Works works={works} />
       <About />
