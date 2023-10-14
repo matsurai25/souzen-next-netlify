@@ -11,7 +11,7 @@ export default function Header() {
       <Links
         style={{ viewTransitionName: `headedr-links` }}
       >
-        <TransitionLink href='/'>Top</TransitionLink>
+        {/* <TransitionLink href='/'>Top</TransitionLink> */}
         <TransitionLink href='/works'>Works</TransitionLink>
         <TransitionLink href='/blog'>Blog</TransitionLink>
       </Links>
@@ -28,11 +28,17 @@ const Wrapper = styled.header`
   justify-content: space-between;
 
   ${media.mobile} {
+    padding: 0 2.4rem;
+    height: 6.4rem;
   }
 `
 
 const Logo = styled.img`
-  height: 4rem;
+  height: 3rem;
+
+  ${media.mobile} {
+    height: 2.4rem;
+  }
 `
 
 const Links = styled.div`
@@ -40,6 +46,11 @@ const Links = styled.div`
   align-items: center;
   font-size: 1.4rem;
   gap: 1.6rem;
+
+  ${media.mobile} {
+    font-size: 1.4rem;
+    gap: 1.6rem;
+  }
 
   a {
     color: #000;

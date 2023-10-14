@@ -78,7 +78,11 @@ export default function Profile() {
   )
 }
 
-const Wrapper = styled(Inner8)``
+const Wrapper = styled(Inner8)`
+  ${media.mobile} {
+    width: calc(100% - 6.4rem);
+  }
+`
 
 const Panel = styled.div`
   border-radius: 2.4rem;
@@ -88,6 +92,12 @@ const Panel = styled.div`
   display: grid;
   grid-template-columns: auto auto 1fr;
   gap: 2rem 4rem;
+
+  ${media.mobile} {
+    padding: 2.4rem;
+    grid-template-columns: auto 1fr;
+    gap: 0 2.4rem;
+  }
 `
 
 const Head = styled.div`
@@ -97,12 +107,25 @@ const Head = styled.div`
   font-weight: 700;
   line-height: 160%; /* 3.84rem */
   grid-column: 1 / 4;
+
+  ${media.mobile} {
+    font-size: 1.6rem;
+    grid-column: 1 / 3;
+    margin-bottom: 1.6rem;
+  }
 `
 const Icon = styled.img`
   width: 8rem;
   height: 8rem;
   border-radius: 66rem;
   grid-row: 2 / 4;
+
+  ${media.mobile} {
+    width: 4.8rem;
+    height: 4.8rem;
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+  }
 `
 const Name = styled.div`
   color: #000;
@@ -111,6 +134,11 @@ const Name = styled.div`
   font-weight: 700;
   line-height: 160%; /* 2.88rem */
   grid-column: 2 / 3;
+
+  ${media.mobile} {
+    font-size: 1.6rem;
+    grid-column: 2 / 3;
+  }
 `
 const Role = styled.div`
   color: #000;
@@ -121,6 +149,11 @@ const Role = styled.div`
   grid-column: 3 / 4;
   display: grid;
   align-content: center;
+
+  ${media.mobile} {
+    font-size: 1rem;
+    grid-column: 2 / 3;
+  }
 `
 const Detail = styled.div`
   color: #000;
@@ -133,6 +166,12 @@ const Detail = styled.div`
   align-items: flex-start;
   gap: 0.8rem 0.8rem;
   grid-column: 2 / 4;
+
+  ${media.mobile} {
+    font-size: 1.3rem;
+    grid-column: 1 / 3;
+    margin-top: 2.4rem;
+  }
 
   ul {
     display: flex;
@@ -158,12 +197,30 @@ const History = styled.div`
   display: grid;
   grid-template-columns: 12rem 1fr;
   row-gap: 1.2rem;
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+
+    div:nth-child(2n -1) {
+      font-weight: bold;
+      margin-bottom: -0.8rem;
+    }
+  }
 `
 const Skills = styled.div`
   display: grid;
   font-size: 1.2rem;
   grid-template-columns: 12rem 1fr;
   row-gap: 1.2rem;
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+
+    div:nth-child(2n -1) {
+      font-weight: bold;
+      margin-bottom: -0.8rem;
+    }
+  }
 `
 const Border = styled.div`
   border-bottom: 0.1rem solid #ddd;

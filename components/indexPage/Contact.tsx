@@ -19,9 +19,10 @@ export default function Contact() {
 }
 
 const Wrapper = styled(Inner6)`
-  padding: 8rem 0;
+  padding: 2rem 0 4rem;
 
   ${media.mobile} {
+    width: calc(100% - 6.4rem);
   }
 `
 const Heading = styled.div`
@@ -31,6 +32,11 @@ const Heading = styled.div`
   font-weight: 700;
   line-height: normal;
   margin-bottom: 6rem;
+
+  ${media.mobile} {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
 `
 const Body = styled.p`
   color: #000;
@@ -39,6 +45,11 @@ const Body = styled.p`
   font-weight: 400;
   line-height: normal;
   margin-bottom: 4rem;
+
+  ${media.mobile} {
+    font-size: 1.4rem;
+    margin-bottom: 3.2rem;
+  }
 `
 
 const Button = styled.a`
@@ -55,6 +66,13 @@ const Button = styled.a`
   font-weight: 700;
   line-height: normal;
   text-decoration: none;
+
+  ${media.mobile} {
+    display: grid;
+    padding: 1rem 4rem;
+    font-size: 1.6rem;
+    margin: 0 auto;
+  }
 
   &:hover {
     background: #333;

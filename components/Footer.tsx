@@ -16,5 +16,7 @@ const Wrapper = styled.footer`
   padding: 8rem 0;
 
   ${media.mobile} {
+    padding: 4rem 0;
+    font-size: 1.2rem;
   }
 `

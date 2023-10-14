@@ -1,5 +1,6 @@
 import { media } from '@/util/const'
 import styled from 'styled-components'
+import { PcBr, SpBr } from '@/components/common'
 import { Inner6, Side } from '@/components/Layout'
 
 export default function About() {
@@ -9,9 +10,13 @@ export default function About() {
       <Heading>
         頼まれたものを作るのではなく、
         <br />
-        「こうしたい」を実現させるだけでもなく、
+        「こうしたい」を
+        <SpBr />
+        実現させるだけでもなく、
         <br />
-        本当の課題を解決するために、できることを全部やります。
+        本当の課題を解決するために、
+        <SpBr />
+        できることを全部やります。
       </Heading>
       <Body>
         souzenは、WEBサイト、映像コンテンツ、デザインの制作から、マーケティングやコンサルティングなどを含め、幅広く「事業を実現する」手伝いを行う会社です。
@@ -24,7 +29,7 @@ export default function About() {
         前提となる戦略や今後の展望を伺い、最適な解決策を一緒に模索させていただきます。
         <br />
         「これをやりたい」と思ったときに、とりあえず話しかけてみる。
-        <br />
+        <PcBr />
         そんな会社でありたいと思っています。
       </Body>
     </Wrapper>
@@ -37,6 +42,8 @@ const Wrapper = styled(Inner6)`
   align-items: center;
 
   ${media.mobile} {
+    padding: 2rem 0 4rem;
+    width: calc(100% - 6.4rem);
   }
 `
 
@@ -47,6 +54,11 @@ const Heading = styled.h2`
   font-weight: 700;
   line-height: 160%;
   margin-bottom: 3.2rem;
+
+  ${media.mobile} {
+    font-size: 2rem;
+    margin-bottom: 3.2rem;
+  }
 `
 
 const Body = styled.p`
@@ -55,4 +67,8 @@ const Body = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 180%; /* 2.88rem */
+
+  ${media.mobile} {
+    font-size: 1.2rem;
+  }
 `

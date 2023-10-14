@@ -50,20 +50,4 @@ const GlobalStyles = createGlobalStyle`
       font-size: calc(100vw / 375 * 10);
     }
   }
-
-  @keyframes fade-in {
-    from { opacity: 0; }
-  }
-
-  @keyframes fade-out {
-    to { opacity: 0; }
-  }
-
-  ::view-transition-old(*) {
-    transition-duration: 5s;
-  }
-
-  ::view-transition-new(*) {
-    transition-duration: 5s;
-  }
 `

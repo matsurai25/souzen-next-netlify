@@ -8,12 +8,13 @@ const transformer: Transformer = {
 
     try {
       const { result } = await ogs(options)
+
       return WebCard({
         href: url,
         imagePath: result.ogImage,
         title: result.ogTitle,
         description: result.ogDescription,
-        favicon: result.favicon
+        favicon: getFaviconUrl(result.favicon, url)
       })
     } catch (error) {
       return url
@@ -51,16 +52,8 @@ function WebCard({
   favicon?: string
 }) {
   const u = new URL(href)
-  let faviconWithDomain: string | null
-  if (!favicon) {
-    faviconWithDomain = u.origin + '/favicon.ico'
-  } else if (favicon.startsWith('http')) {
-    faviconWithDomain = favicon
-  } else {
-    faviconWithDomain = u.origin + favicon
-  }
   return `
-  <a class="webcard" href="${href}">
+  <a class="webcard" href="${href}" target="_blank" rel="noopener noreferrer">
     ${
       imagePath &&
       imagePath.length > 0 &&
@@ -68,12 +61,40 @@ function WebCard({
     }
     <div class="webcard-text">
       <div class="webcard-title" >${title}</div>
-      <div class="webcard-description">${description || ''}</div>
+      <div class="webcard-description">${
+        description || ''
+      }</div>
       <div class="webcard-siteurl">
-        <img class="webcard-favicon" src="${faviconWithDomain}" />
+        <div class="webcard-favicon" style="background-image:url(${favicon})" ></div>
         ${u.origin}
       </div>
     </div>
   </a>
   `
+}
+
+/**
+ * アクセス可能なfaviconのURLを取得する
+ * faviconPathには絶対パス、相対パスどちらも来る可能性がある
+ *
+ * @param faviconPath
+ * @param url
+ * @returns
+ */
+function getFaviconUrl(
+  faviconPath: string | undefined,
+  url: string
+): string {
+  const u = new URL(url)
+  // そもそも存在していないならデフォルトのfaviconを探す
+  if (!faviconPath) {
+    return u.origin + '/favicon.ico'
+  }
+
+  // 完全なURLが指定されているならそれを使う
+  if (faviconPath.startsWith('http')) {
+    return faviconPath
+  }
+
+  return new URL(faviconPath, url).toString()
 }

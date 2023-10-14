@@ -12,24 +12,40 @@ const Inner = styled.div`
   position: relative;
 
   ${media.mobile} {
-    width: 100%;
+    width: calc(100% - 3.2rem);
   }
 `
 
 export const Inner11 = styled(Inner)`
   width: calc(12rem * 11);
+
+  ${media.mobile} {
+    width: calc(100% - 3.2rem);
+  }
 `
 
 export const Inner10 = styled(Inner)`
   width: calc(12rem * 10);
+
+  ${media.mobile} {
+    width: calc(100% - 3.2rem);
+  }
 `
 
 export const Inner8 = styled(Inner)`
   width: calc(12rem * 8);
+
+  ${media.mobile} {
+    width: calc(100% - 3.2rem);
+  }
 `
 
 export const Inner6 = styled(Inner)`
   width: calc(12rem * 6);
+
+  ${media.mobile} {
+    width: calc(100% - 3.2rem);
+  }
 `
 
 export const Section = styled.section`

@@ -31,6 +31,8 @@ const Wrapper = styled(Inner6)`
   padding: 8rem 0;
 
   ${media.mobile} {
+    padding: 6rem 0;
+    width: calc(100% - 6.4rem);
   }
 `
 
@@ -41,11 +43,21 @@ const Heading = styled.div`
   font-weight: 700;
   line-height: normal;
   margin-bottom: 6rem;
+
+  ${media.mobile} {
+    font-size: 2.4rem;
+    margin-bottom: 3.2rem;
+  }
 `
 const Items = styled.div`
   display: grid;
   grid-template-columns: 9.6rem 60rem;
   gap: 3.2rem 2.4rem;
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
 `
 const ItemName = styled.div`
   color: #878787;
@@ -54,6 +66,12 @@ const ItemName = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  ${media.mobile} {
+    text-align: left;
+    font-size: 1.4rem;
+    margin-bottom: -1.2rem;
+  }
 `
 const ItemBody = styled.div`
   color: #000;
@@ -61,4 +79,8 @@ const ItemBody = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  ${media.mobile} {
+    font-size: 1.4rem;
+  }
 `

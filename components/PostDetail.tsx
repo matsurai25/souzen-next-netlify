@@ -4,6 +4,7 @@ import { Inner8 } from '@/components/Layout'
 import dayjs from 'dayjs'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { media } from '@/util/const'
 
 interface Props {
   post: IFPostDetail
@@ -49,9 +50,7 @@ export default function PostDetail({ post }: Props) {
           )}
           <Title>{post.title}</Title>
           <Published>
-            {dayjs(post.date).format(
-              'YYYY年MM月DD日'
-            )}
+            {dayjs(post.date).format('YYYY年MM月DD日')}
           </Published>
           <Body
             dangerouslySetInnerHTML={{
@@ -72,6 +71,10 @@ export default function PostDetail({ post }: Props) {
 
 const Wrppaer = styled(Inner8)`
   padding: 8rem 0;
+
+  ${media.mobile} {
+    padding: 1.6rem 0 4rem;
+  }
 `
 
 const Article = styled.article`
@@ -83,10 +86,18 @@ const Article = styled.article`
   overflow: hidden;
   z-index: 2;
   position: relative;
+
+  ${media.mobile} {
+    font-size: 1.4rem;
+  }
 `
 
 const Padding = styled.div`
   padding: 6rem 12rem;
+
+  ${media.mobile} {
+    padding: 1rem 2rem 3.2rem;
+  }
 `
 
 const Tags = styled.div`
@@ -137,12 +148,22 @@ const PrivateCallout = styled.div`
     color: #fff;
     font-weight: bold;
   }
+
+  ${media.mobile} {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.2rem;
+  }
 `
 
 const Title = styled.h1`
   line-height: 1.4;
   font-size: 2.8rem;
   font-weight: bold;
+  font-feature-settings: 'palt';
+
+  ${media.mobile} {
+    font-size: 2rem;
+  }
 `
 
 const Published = styled.h6`
@@ -260,9 +281,17 @@ const Body = styled.div`
       background-color: #ecfaff;
       transition: all 0.3s ease-out;
     }
+
+    ${media.mobile} {
+      grid-template-columns: 1fr;
+    }
   }
   .webcard-image {
     width: 30rem;
+
+    ${media.mobile} {
+      width: 100%;
+    }
   }
   .webcard-text {
     padding: 0 4rem;
@@ -270,6 +299,11 @@ const Body = styled.div`
     gap: 0.8rem;
     align-items: center;
     align-content: center;
+
+    ${media.mobile} {
+      padding: 0.8rem 1.6rem 1.2rem;
+      gap: 0.4rem;
+    }
   }
   .webcard-title {
     font-size: 1.6rem;
@@ -277,6 +311,10 @@ const Body = styled.div`
     overflow: hidden;
     white-space: nowrap;
     font-weight: bold;
+
+    ${media.mobile} {
+      font-size: 1.4rem;
+    }
   }
   .webcard-description {
     font-size: 1.2rem;
@@ -285,9 +323,15 @@ const Body = styled.div`
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+
+    ${media.mobile} {
+      font-size: 1.1rem;
+    }
   }
   .webcard-favicon {
     width: 1.6rem;
+    height: 1.6rem;
+    background-size: contain;
   }
   .webcard-siteurl {
     font-size: 1.1rem;

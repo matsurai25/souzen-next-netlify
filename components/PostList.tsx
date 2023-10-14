@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { TransitionLink } from '@/components/TransitionLink'
 import { Post } from '@/util/types'
+import { media } from '@/util/const'
 
 interface Props {
   posts: Post[]
@@ -46,6 +47,10 @@ const Items = styled.div`
   }
 
   @container (max-width: calc(420px)) {
+    grid-template-columns: 1fr;
+  }
+
+  ${media.mobile} {
     grid-template-columns: 1fr;
   }
 `
