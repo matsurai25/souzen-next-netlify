@@ -70,7 +70,7 @@ export default function PostDetail({ post }: Props) {
 }
 
 const Wrppaer = styled(Inner8)`
-  padding: 8rem 0;
+  padding: 2rem 0 8rem;
 
   ${media.mobile} {
     padding: 1.6rem 0 4rem;
@@ -130,8 +130,8 @@ const HiddenTags = styled(Tags)`
 const PrivateCallout = styled.div`
   padding: 1.6rem 2.4rem;
   font-size: 1.4rem;
-  background-color: #ffbaba;
-  margin: 2.4rem 0;
+  background-color: #fff0f0;
+  margin: 0 0 2.4rem;
   display: flex;
   gap: 0.8rem;
   align-items: center;
@@ -139,7 +139,7 @@ const PrivateCallout = styled.div`
   &::before {
     content: '!';
     display: flex;
-    background-color: #f33;
+    background-color: #df2525;
     border-radius: 1.6rem;
     width: 2rem;
     height: 2rem;
