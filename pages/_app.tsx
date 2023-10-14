@@ -4,6 +4,7 @@ import { Main } from '@/components/Layout'
 import { media } from '@/util/const'
 import { useTransitionRouterPush } from '@/util/hooks'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import 'reset-css'
@@ -27,6 +28,12 @@ export default function App({
 
   return (
     <>
+      <Head>
+        <meta
+          name='viewport'
+          content='width=device-width,initial-scale=1.0'
+        />
+      </Head>
       <GlobalStyles />
       <Main>
         <Header />

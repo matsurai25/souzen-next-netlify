@@ -12,8 +12,15 @@ export default function Header() {
         style={{ viewTransitionName: `headedr-links` }}
       >
         {/* <TransitionLink href='/'>Top</TransitionLink> */}
-        <TransitionLink href='/works'>Works</TransitionLink>
-        <TransitionLink href='/blog'>Blog</TransitionLink>
+        <TransitionLink href='/works'>WORKS</TransitionLink>
+        <TransitionLink href='/blog'>BLOG</TransitionLink>
+        <a
+          href='https://twitter.com/matsurai25'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <IconTwitter src={'icon-x.svg'} />
+        </a>
       </Links>
     </Wrapper>
   )
@@ -39,6 +46,9 @@ const Logo = styled.img`
   ${media.mobile} {
     height: 2.4rem;
   }
+  &:hover {
+    opacity: 0.8;
+  }
 `
 
 const Links = styled.div`
@@ -55,5 +65,18 @@ const Links = styled.div`
   a {
     color: #000;
     text-decoration: none;
+
+    &:hover {
+      color: #00f;
+    }
+  }
+`
+
+const IconTwitter = styled.img`
+  width: 3.6rem;
+  height: 3.6rem;
+
+  &:hover {
+    opacity: 0.8;
   }
 `
