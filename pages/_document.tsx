@@ -38,12 +38,15 @@ export default function Document() {
           content={'https://souzen.io'}
         />
         <meta property='og:type' content='website' />
-        <link rel='shortcut icon' href={'favicon.ico'} />
+        <link
+          rel='shortcut icon'
+          href='https://souzen.io/favicon.ico'
+        />
         <meta name='theme-color' content='#0000FF' />
         <meta name='twitter:card' content='summary' />
         <meta
           property='og:image'
-          content={'post/free-gradient.webp'}
+          content={'https://souzen.io/ogp.webp'}
         />
       </Head>
       <body>

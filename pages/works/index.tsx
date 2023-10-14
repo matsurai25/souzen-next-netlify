@@ -13,12 +13,6 @@ export default function Page({ posts }: Props) {
     <>
       <Head>
         <title>works / 株式会社souzen</title>
-        <meta name='description' content='' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1'
-        />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Wrapper>
         <Inner11>

@@ -19,7 +19,6 @@ export default function Home({ works }: Props) {
           name='viewport'
           content='width=device-width, initial-scale=1'
         />
-        <link rel='icon' href='favicon.ico' />
       </Head>
       <Works works={works} />
       <About />
