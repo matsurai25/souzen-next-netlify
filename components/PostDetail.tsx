@@ -11,9 +11,9 @@ interface Props {
 export default function PostDetail({ post }: Props) {
   const { asPath } = useRouter()
 
-  // useEffect(() => {
-  //   ;(window as any).twttr.widgets.load()
-  // }, [asPath])
+  useEffect(() => {
+    ;(window as any).twttr.widgets.load()
+  }, [asPath])
 
   return (
     <Wrppaer>

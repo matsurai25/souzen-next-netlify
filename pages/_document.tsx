@@ -20,10 +20,10 @@ export default function Document() {
         <style>
           {`html {background:#FFF} body {opacity:0}`}
         </style>
-        {/* <script
+        <script
           async
           src='https://platform.twitter.com/widgets.js'
-        ></script> */}
+        ></script>
         <meta name='robots' content='noindex,follow' />
       </Head>
       <body>

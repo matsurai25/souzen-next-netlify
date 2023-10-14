@@ -59,13 +59,13 @@ https://twitter.com/vroid_pixiv/status/1409451543292645378
 
 <small>マーケ/動画制作。リリースに伴う情報公開順とための大切さなど学ばせてもらいました。</small>
 
-<!-- https://www.youtube.com/watch?v=YaM4xmYow8M
+https://www.youtube.com/watch?v=YaM4xmYow8M
 
 <small>一部CD(一部コンテ/選曲)</small>
 
 https://www.youtube.com/watch?v=2gfEpSW-pvw
 
-<small>一部CD(一部コンテ/選曲)</small> -->
+<small>一部CD(一部コンテ/選曲)</small>
 
 #### その他
 
