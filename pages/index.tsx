@@ -14,7 +14,10 @@ export default function Home({ works }: Props) {
     <>
       <Head>
         <title>株式会社souzen</title>
-        <meta name='description' content='test' />
+        <meta
+          name='description'
+          content='souzenは、WEBサイト制作を中心に、映像コンテンツ、デザイン、マーケティングやコンサルティングなどを含め、幅広く「事業を実現する」手伝いを行う会社です。'
+        />
         <meta
           name='viewport'
           content='width=device-width, initial-scale=1'
