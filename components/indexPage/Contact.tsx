@@ -10,7 +10,7 @@ export default function Contact() {
       <Body>以下のフォームよりお問い合わせ下さい。</Body>
       <Button
         target='_blank'
-        href='https://docs.google.com/forms/d/e/1FAIpQLSeEBAUQVUaErWUUiRpA1_Cv9Waz7mB3PV9HMg7cK8xLM6Hf4w/viewform'
+        href='https://docs.google.com/forms/d/e/1FAIpQLSfJGTw8ahXonxsnwC7jcce6PTRnJbU5Li_xdZKTjUaTGwyTQA/viewform'
       >
         Googleフォーム
       </Button>
