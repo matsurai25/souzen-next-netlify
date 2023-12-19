@@ -45,7 +45,7 @@ export default function PostDetail({ post }: Props) {
           </HiddenTags>
           {post.private && (
             <PrivateCallout>
-              この記事はURLを知っている人のみが閲覧可能です
+              このページはURLを知っている人のみが閲覧可能です
             </PrivateCallout>
           )}
           <Title>{post.title}</Title>
