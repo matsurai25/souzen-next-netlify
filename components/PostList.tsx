@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { TransitionLink } from '@/components/TransitionLink'
 import { Post } from '@/util/types'
 import { media } from '@/util/const'
+import dayjs from 'dayjs'
 
 interface Props {
   posts: Post[]
@@ -67,10 +68,13 @@ function Item({
       href={`/${type}/${post.id}`}
       style={{ viewTransitionName: `wrapper-${post.id}` }}
     >
-      <ItemImage
-        src={post.image}
-        style={{ viewTransitionName: `image-${post.id}` }}
-      />
+      <ItemImageWrapper>
+        <ItemImage
+          src={post.image}
+          style={{ viewTransitionName: `image-${post.id}` }}
+        />
+        <ItemImageBackGround src={post.image} />
+      </ItemImageWrapper>
       <ItemText>
         <Tags>
           {post.tags &&
@@ -86,9 +90,11 @@ function Item({
             ))}
         </Tags>
         <ItemTitle>{post.title}</ItemTitle>
-        {/* <ItemTitleSub>
-          {dayjs(post.date).format('YYYY.MM.DD')}
-        </ItemTitleSub> */}
+        {type == 'blog' && (
+          <ItemTitleSub>
+            {dayjs(post.date).format('YYYY.MM.DD')}
+          </ItemTitleSub>
+        )}
       </ItemText>
     </ItemWrapper>
   )
@@ -123,11 +129,30 @@ const ItemText = styled.div`
   padding: 1.2rem 1.6rem 1.6rem;
 `
 
+const ItemImageWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+`
+
 const ItemImage = styled.img`
   width: 100%;
   aspect-ratio: 1200/630;
   border-radius: 1.6rem 1.6rem 0 0;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+`
+const ItemImageBackGround = styled.img`
+  width: 100%;
+  aspect-ratio: 1200/630;
+  border-radius: 1.6rem 1.6rem 0 0;
   object-fit: cover;
+  filter: blur(1rem);
+  transform: scale(1.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 `
 const Tags = styled.div`
   display: flex;

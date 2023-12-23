@@ -24,10 +24,9 @@ export default function Document() {
           async
           src='https://platform.twitter.com/widgets.js'
         ></script>
-        <meta name='robots' content='noindex,follow' />
         <meta
           property='og:site_name'
-          content={'souzen Inc.'}
+          content={'株式会社souzen'}
         />
         <meta
           property='og:url'

@@ -19,7 +19,7 @@ export default function Header() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <IconTwitter src={'icon-x.svg'} />
+          <IconTwitter src={'/icon-x.svg'} />
         </a>
       </Links>
     </Wrapper>
