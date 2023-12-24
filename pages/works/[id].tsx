@@ -42,7 +42,10 @@ export default function WorksDetail({
           property='og:description'
           content={description}
         /> */}
-        <meta property='og:image' content={post.image} />
+        <meta
+          property='og:image'
+          content={'https://souzen.io' + post.image}
+        />
       </Head>
       <PostDetail post={post} />
       <Inner8>
